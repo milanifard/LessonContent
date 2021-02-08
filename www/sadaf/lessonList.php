@@ -11,7 +11,21 @@ HTMLBegin();
 
 if(isset($_REQUEST["DeleteLesson"])){
 
-    Lesson::DeleteLessons();
+    $mysql = pdodb::getInstance();
+		$query = "select * from lesson";
+		$res=$mysql->Execute($query);
+		
+		while($rec = $res->fetch())
+		{
+			$CName="le_".$rec["id"];
+            if(isset($_REQUEST[$CName])){
+                $query="delete from lesson where id=".$rec["id"];   
+                $mysql->Execute($query);
+                $query="delete from person_lesson where lessonid=".$rec["id"];
+                $mysql->Execute($query);
+
+            }
+		}
 }
 
 if(isset($_REQUEST["new"]))
