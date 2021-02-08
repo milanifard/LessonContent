@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 include("header.inc.php");
 include("classes/Lesson.class.php");
@@ -17,13 +20,25 @@ if(isset($_REQUEST["new"]))
     $_REQUEST['mine'] = "mine1";
 }
 
+$currentcode = "";
+$currenttitle = "";
 if(isset($_REQUEST["updateid"]))
 {
     $_REQUEST["show_lesson"] = 1;
     $_REQUEST['mine'] = "mine1";
+    $up = $_REQUEST["updateid"];
+
+    $mysql = pdodb::getInstance();
+    $query = "select * from lesson where id = ".$up;
+    $res = $mysql->Execute($query);
+    if($rec = $res->fetch())
+    {
+        $currentcode = $rec["code"];
+        $currenttitle = $rec["title"];
+    }
+
+
 }
-
-
 
 if(isset($_REQUEST["save"]))
 {
@@ -36,18 +51,19 @@ if(isset($_REQUEST["save"]))
         if(isset($_REQUEST["code"]))
         {
             $code = $_REQUEST["code"];
-            $query = "update sadaf.lesson set code = $code where id = $up";
+            $query = 'update sadaf.lesson set code = ? where id = ?;';
             $mysql->Prepare($query);
             $mysql->ExecuteStatement(array($_REQUEST["code"] , $_REQUEST["updateid"]));
         }
-        else if(isset($_REQUEST["title"]))
+        if(isset($_REQUEST["title"]))
         {
             $title = $_REQUEST["title"];
-            $query = "update sadaf.lesson set title = $title where id = $up";
+            $currenttitle = $title;
+            $query = "update sadaf.lesson set title = ? where id = ?;";
             $mysql->Prepare($query);
             $mysql->ExecuteStatement(array($_REQUEST["title"] , $_REQUEST["updateid"]));
+            echo $currenttitle;
         }
-
     }
     else {
 
@@ -131,7 +147,6 @@ if(isset($_REQUEST["save"]))
                 <thead>
                     <tr>
 
-
                         <?php
                         if (isset($_REQUEST["show_lesson"])) {
 
@@ -143,14 +158,15 @@ if(isset($_REQUEST["save"]))
                                     echo "<td>کد:</td>";
 
                                     echo '<td colspan="4">
-                                    <input type="text" name="code" id="code">
+                                    <input type="text" name="code" id="code" autocomplete="false" value='."$currentcode".'>
                                     </td>';
+
 
                                     echo "<tr>";
                                     echo "<td>درس:</td>";
 
                                     echo '<td colspan="2">
-                                    <input type="text" name="title" id="title">
+                                    <input type="text" name="title" id="title"  autocomplete="false" value='."$currenttitle".'>
                                     </td>';
                                     echo "<tr>";
 
@@ -170,7 +186,7 @@ if(isset($_REQUEST["save"]))
                                     echo "<th>محتوا</th>";
                                     Lesson::getUserLesson();
                                     echo '<td colspan="4" class="text-center">
-                                    <input type="submit" value="حذف" class="btn btn-danger btn-sm"
+                                    <input type="submit" name="DeleteLesson" id="DeleteLesson" value="حذف" class="btn btn-danger btn-sm"
                                 </td>';
 
                                 } else if($_REQUEST['mine'] == "others") {
