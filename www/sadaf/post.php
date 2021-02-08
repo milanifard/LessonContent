@@ -24,6 +24,7 @@ if(isset($_POST['savepost']))
       }
 }
 
+
 HTMLBegin();
 ?>
 
