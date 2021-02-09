@@ -10,7 +10,6 @@ class Lesson{
 	public static function getUserLesson(){
 		
 		$userId = $_SESSION["PersonID"];
-		$ValueListArray = array();
 		
 		$mysql = pdodb::getInstance();
 		$query = "select * from persons 

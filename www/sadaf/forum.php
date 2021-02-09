@@ -71,11 +71,11 @@ $mysql = pdodb::getInstance();
    
 <form method="post" action="" style="margin-right: 5vw; ">
     <p>:موضوع گفتگو</p>  
-    <input type="text" name="forum_title" />
+    <input dir="rtl" type="text" name="forum_title" />
     <p>:توضیحات گفتگو</p> 
-    <textarea name="for_description" value="for_description" /></textarea>
+    <textarea dir="rtl" name="for_description" value="for_description" /></textarea>
     <p>:وضعیت</p>
-    فعال<input type="radio" name="status" value="off" style=" margin-right:5%;">
+    فعال<input  type="radio" name="status" value="off" style=" margin-right:5%;">
      غیرفعال <input type="radio" name="status" value="on" style="margin-right:2%; " checked>
      <br>
     <input type="submit" value="ایجاد" name="saveforum" id="saveforum" class="btn btn-primary" style="margin-top: 1vw;" />

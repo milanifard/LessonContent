@@ -59,7 +59,6 @@ $mysql = pdodb::getInstance();
 		{
 			echo "<tr>";
             echo "<td>";
-            echo ++$i;
             echo"</td>";
             echo "<td><a class='btn btn-primary'
              href='forum.php?subjectid=".$rec["subjectId"]."'>".$rec["title"]."</a></td>";
