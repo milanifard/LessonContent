@@ -35,10 +35,10 @@ class source{
 	public static function tag_form($subjectId){
 		echo "<form class=' col-md-10 bg-color bg-info text-white center' style='margin:5%; padding:15px;'>
         <div class='form-group'>
-        <div class='form-group'>
-		<label>نام تگ را وارد کنید</label>
+		<div class='form-group'>
 		<input type='text' name='tag_name'>
-		<input type='hidden'  name='subjectId' value= ".$subjectId.">
+		<label> نام تگ را وارد کنید</label>
+		<input dir='rtl' type='hidden'  name='subjectId' value= ".$subjectId.">
         </div>
          <button name='add_tag' type='submit' class='btn btn-primary'>ایجاد</button>
 		</form>";

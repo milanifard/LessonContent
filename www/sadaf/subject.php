@@ -29,12 +29,12 @@ HTMLBegin();
   <form class="col-md-10 bg-color bg-info text-white center" style="margin:5%; padding:15px;">
   <div class="form-group">
     <label for="subject">افزودن موضوع</label>
-    <input name="title" type="text" class="form-control" id="subject"  placeholder="عنوان موضوع">
+    <input dir="rtl" name="title" type="text" class="form-control" id="subject"  placeholder="عنوان موضوع">
     
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">درس</label>
-        <select name="subjects" id="subjects" class="form-control">
+        <select dir="rtl" name="subjects" id="subjects" class="form-control">
                 <?= Subject::getUserLesson(); ?>
         </select>
   </div>

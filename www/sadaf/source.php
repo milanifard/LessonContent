@@ -13,7 +13,7 @@ HTMLBegin();
   <form class="col-md-10 bg-color bg-info text-white center" style="margin:5%; padding:15px;">
     <div class="form-group">
       <label for="exampleInputPassword1">درسی که میخواهید یک منبع جدید به آن اضافه کنید را انتخاب کنید</label>
-          <select name="source_lesson" id="source" class="form-control">
+          <select dir="rtl" name="source_lesson" id="source" class="form-control">
               <?= Subject::getUserLesson(); ?>
           </select>
     </div>
@@ -173,13 +173,13 @@ else if(isset($_REQUEST["add_source"])){
   echo "<form class=' col-md-10 bg-color bg-info text-white center' style='margin:5%; padding:15px;'>
         <div class='form-group'>
         <label>موضوعی که میخواهید یک منبع جدید به آن اضافه کنید را انتخاب کنید</label>
-        <select name='subject' class='form-control'>";
+        <select dir='rtl' name='subject' class='form-control'>";
   echo  Subject::getLessonSubject($lessonId); 
   echo  "</select>
         </div>
         <div class='form-group'>
         <label>نوع منبع را انتخاب کنید</label>
-        <select name='source_type' class='form-control'>
+        <select dir='rtl' name='source_type' class='form-control'>
           <option>برچسب</option>
           <option>صفحه</option>
           <option>فایل</option>
