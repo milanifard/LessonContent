@@ -130,7 +130,7 @@ class source{
 		array_push($ValueListArray, $content);
 		$mysql->Prepare($query);
 		$res = $mysql->ExecuteStatement($ValueListArray);
-		source::add_subjectPage($id ,$sId);
+		source::add_subjectPage($sId,$id);
 		if($rec = $res->fetch())
 		{
 			return true;
