@@ -7,7 +7,7 @@ error_reporting(E_ALL);
 include("header.inc.php");
 include("classes/Lesson.class.php");
 
-
+//
 
 
 HTMLBegin();
@@ -59,8 +59,8 @@ if ($_GET['lessonid']) {
         echo "<td>";
 
         echo "</td>";
-        echo "<td><a class='btn btn-primary'
-             href='forum.php?subjectid=" . $rec["subjectId"] . "'>" . $rec["title"] . "</a>
+        echo "<td><a class='btn btn-primary  text-white'
+             >" . $rec["title"] . "</a>
              <br><br> <ul>";
 
 
@@ -162,7 +162,7 @@ if ($_GET['lessonid']) {
         
         while ($rec6 = $res6->fetch()) {
             if ($i==0) {
-                echo "<li ><b>تالار های گفت و گو</b>";
+                echo "<li> <a href='forum.php?subjectid=" . $rec["subjectId"] . "'><b>تالار های گفت و گو</b></a>";
             }
             echo "<ul><li>";
             echo $rec6["forum_title"];
