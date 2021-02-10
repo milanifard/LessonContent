@@ -2,7 +2,7 @@
 
 class source{
 
-    public static function addAttachment(){
+    public static function addAttachment($name ,$description ,$attachment){
 		$mysql = pdodb::getInstance();
 		$query = "insert into sadaf.attachment (";
 		$query .= " id";
