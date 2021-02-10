@@ -59,7 +59,7 @@ else if(isset($_REQUEST["add_tag"])){
         This is a success alert—check it out!
         </div>";
        }
-       echo  "<script>window.location.replace('./lessonContent.php');</script>";
+     //  echo  "<script>window.location.replace('./lessonlist.php');</script>";
  }
 
  else if(isset($_REQUEST["add_page"])){
@@ -99,7 +99,7 @@ else if(isset($_REQUEST["add_file"])){
         This is a success alert—check it out!
         </div>";
        }   
-       echo  "<script>window.location.replace('./lessonContent.php');</script>";
+      // echo  "<script>window.location.replace('./lessonlist.php');</script>";
 }
 
 else if(isset($_REQUEST["add_folder"])){
@@ -119,7 +119,7 @@ else if(isset($_REQUEST["add_folder"])){
       This is a success alert—check it out!
       </div>";
      }  
-     echo  "<script>window.location.replace('./lessonContent.php');</script>";
+   //  echo  "<script>window.location.replace('./lessonlist.php');</script>";
 }
 
 else if(isset($_REQUEST["add_attachment"])){
@@ -141,7 +141,8 @@ else if(isset($_REQUEST["add_attachment"])){
           This is a success alert—check it out!
           </div>";
          }  
-         echo  "<script>window.location.replace('./lessonContent.php');</script>";
+        //
+        // echo  "<script>window.location.replace('./lessonlist.php');</script>";
 } 
 
 else if(isset($_REQUEST["add_hall"])){
@@ -163,7 +164,7 @@ else if(isset($_REQUEST["add_hall"])){
           This is a success alert—check it out!
           </div>";
          }  
-         echo  "<script>window.location.replace('./lessonContent.php');</script>";
+         //echo  "<script>window.location.replace('./lessonlist.php');</script>";
 } 
 
 else if(isset($_REQUEST["add_source"])){
